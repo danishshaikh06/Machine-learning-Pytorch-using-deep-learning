@@ -8,7 +8,7 @@ import numpy as np
 # 1) Generate synthetic regression data using sklearn's datasets
 # n_samples: number of data points, n_features: number of features (1 for simple linear regression)
 # noise: standard deviation of Gaussian noise added to the output, random_state: seed for reproducibility
-X_numpy, y_numpy = datasets.make_regression(n_samples=100, n_features=1, noise=20, random_state=42)
+X_numpy, y_numpy = datasets.make_regression(n_samples=100, n_features=1, noise=20, random_state=1)
 
 # Convert numpy arrays to PyTorch tensors
 # X is the input feature, y is the target output
@@ -21,7 +21,7 @@ print(y.shape)
 y = y.view(y.shape[0], 1)
 
 # Define a test input for prediction after training
-X_test = torch.tensor([[5]], dtype=torch.float32)
+X_test = torch.tensor([[5]], dtype=torch.float32) 
 
 # Get the number of samples and features from the input data
 no_samples, no_features = X.shape

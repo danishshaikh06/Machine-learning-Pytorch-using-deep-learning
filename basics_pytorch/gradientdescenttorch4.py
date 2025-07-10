@@ -19,7 +19,7 @@ print(f'Prediction before training:{forward(5):.3f}')
 
 #training phase
 learning_rate=0.01
-epochs=100
+epochs=1000
 
 for epoch in range(epochs):
     y_prediction=forward(X)
@@ -36,7 +36,7 @@ for epoch in range(epochs):
     ## Reset gradients before the next iteration
     w.grad.zero_()
 
-    if epoch % 10 == 0:
+    if epoch % 100 == 0:
         print(f'epoch {epoch+1} loss={l:.8f} w={w:.3f}')
 
 print(f'Prediction after training: f(5)={forward(5):.3f}')
